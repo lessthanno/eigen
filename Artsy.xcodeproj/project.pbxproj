@@ -474,6 +474,7 @@
 		609B3C091761F80C00953CB2 /* ARSiteHeroUnitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 609B3C081761F80C00953CB2 /* ARSiteHeroUnitView.m */; };
 		609E394E1C9FEC840035C6FC /* LiveAuctionLotImagesPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609E394D1C9FEC840035C6FC /* LiveAuctionLotImagesPreviewView.swift */; };
 		609E394F1CA01FBC0035C6FC /* LiveAuctionsAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6019A9071C7E76EF00E292FA /* LiveAuctionsAssets.xcassets */; };
+		609E39511CA062950035C6FC /* LiveAuctionsBidding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609E39501CA062950035C6FC /* LiveAuctionsBidding.storyboard */; };
 		609F97CC1AC0F26A0079FE21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609F97CB1AC0F26A0079FE21 /* Images.xcassets */; };
 		609F97D01AC0F26A0079FE21 /* Artsy WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 609F97CF1AC0F26A0079FE21 /* Artsy WatchKit App.app */; };
 		609F97D81AC0F26A0079FE21 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609F97D61AC0F26A0079FE21 /* Interface.storyboard */; };
@@ -555,6 +556,7 @@
 		60CE3CAB1B46F3EE00CA2B75 /* ArtsyOHHTTPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CE3CAA1B46F3EE00CA2B75 /* ArtsyOHHTTPAPI.m */; };
 		60CEA77E19B61F8000CC3A91 /* ARArtistNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CEA77D19B61F8000CC3A91 /* ARArtistNetworkModel.m */; };
 		60CF980817BF79CA005ED59B /* ARArtistBiographyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CF980717BF79CA005ED59B /* ARArtistBiographyViewController.m */; };
+		60D3950E1CA068060015726E /* LiveButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D3950D1CA068060015726E /* LiveButtons.swift */; };
 		60D7FB731AC35F5600F5043A /* ARPersonalizeWebViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D7FB721AC35F5600F5043A /* ARPersonalizeWebViewControllerTests.m */; };
 		60D83DE8189EAB82001672E9 /* ARFairShowMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D83DE7189EAB82001672E9 /* ARFairShowMapper.m */; };
 		60D83DEE189EE679001672E9 /* ARFairGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D83DED189EE679001672E9 /* ARFairGuideViewController.m */; };
@@ -565,6 +567,10 @@
 		60D90A0B17C218930073D5B9 /* ARInternalMobileWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D90A0A17C218930073D5B9 /* ARInternalMobileWebViewController.m */; };
 		60DCDAD71C6533DF00BB61D7 /* ARSerifNavigationViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DCDAD51C6533A900BB61D7 /* ARSerifNavigationViewControllerSpec.m */; };
 		60DE2DE11677B30700621540 /* ARLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608B2F711657D2DF0046956C /* ARLoginViewController.m */; };
+		60E60A751CA161A20081446A /* LiveBiddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E60A741CA161A20081446A /* LiveBiddingViewController.swift */; };
+		60E60A7A1CA17CB30081446A /* LiveBiddingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E60A781CA17CAE0081446A /* LiveBiddingViewControllerTests.swift */; };
+		60E60A7E1CA17DED0081446A /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E60A7C1CA17DED0081446A /* StoryboardConstants.swift */; };
+		60E60A7F1CA17DED0081446A /* StoryboardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E60A7D1CA17DED0081446A /* StoryboardImages.swift */; };
 		60E6447617BE424E004486B3 /* ARSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6447517BE424E004486B3 /* ARSwitchView.m */; };
 		60E719FE1B4C6032008948FA /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E719FD1B4C6032008948FA /* Launch Screen.xib */; };
 		60E71A011B4C60AC008948FA /* Artsy_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E71A001B4C60AC008948FA /* Artsy_Logo.png */; };
@@ -1504,6 +1510,7 @@
 		609B3C071761F80C00953CB2 /* ARSiteHeroUnitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSiteHeroUnitView.h; sourceTree = "<group>"; };
 		609B3C081761F80C00953CB2 /* ARSiteHeroUnitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSiteHeroUnitView.m; sourceTree = "<group>"; };
 		609E394D1C9FEC840035C6FC /* LiveAuctionLotImagesPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveAuctionLotImagesPreviewView.swift; path = Live_Auctions/Views/LiveAuctionLotImagesPreviewView.swift; sourceTree = "<group>"; };
+		609E39501CA062950035C6FC /* LiveAuctionsBidding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LiveAuctionsBidding.storyboard; path = Live_Auctions/Resources/LiveAuctionsBidding.storyboard; sourceTree = "<group>"; };
 		609F97BD1AC0F2690079FE21 /* Artsy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Artsy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609F97C01AC0F2690079FE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		609F97C11AC0F2690079FE21 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -1635,6 +1642,7 @@
 		60CEA77D19B61F8000CC3A91 /* ARArtistNetworkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARArtistNetworkModel.m; sourceTree = "<group>"; };
 		60CF980617BF79CA005ED59B /* ARArtistBiographyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARArtistBiographyViewController.h; sourceTree = "<group>"; };
 		60CF980717BF79CA005ED59B /* ARArtistBiographyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARArtistBiographyViewController.m; sourceTree = "<group>"; };
+		60D3950D1CA068060015726E /* LiveButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveButtons.swift; path = Live_Auctions/Views/LiveButtons.swift; sourceTree = "<group>"; };
 		60D7FB721AC35F5600F5043A /* ARPersonalizeWebViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARPersonalizeWebViewControllerTests.m; sourceTree = "<group>"; };
 		60D83DE6189EAB82001672E9 /* ARFairShowMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFairShowMapper.h; sourceTree = "<group>"; };
 		60D83DE7189EAB82001672E9 /* ARFairShowMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARFairShowMapper.m; sourceTree = "<group>"; };
@@ -1651,6 +1659,10 @@
 		60D90A0A17C218930073D5B9 /* ARInternalMobileWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARInternalMobileWebViewController.m; sourceTree = "<group>"; };
 		60DCDAD51C6533A900BB61D7 /* ARSerifNavigationViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ARSerifNavigationViewControllerSpec.m; path = Components/ARSerifNavigationViewControllerSpec.m; sourceTree = "<group>"; };
 		60DE2DDE1677B26A00621540 /* ARLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLoginViewController.h; sourceTree = "<group>"; };
+		60E60A741CA161A20081446A /* LiveBiddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveBiddingViewController.swift; path = Live_Auctions/Controllers/LiveBiddingViewController.swift; sourceTree = "<group>"; };
+		60E60A781CA17CAE0081446A /* LiveBiddingViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveBiddingViewControllerTests.swift; path = Live_Auction/LiveBiddingViewControllerTests.swift; sourceTree = "<group>"; };
+		60E60A7C1CA17DED0081446A /* StoryboardConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardConstants.swift; path = Generated/StoryboardConstants.swift; sourceTree = "<group>"; };
+		60E60A7D1CA17DED0081446A /* StoryboardImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardImages.swift; path = Generated/StoryboardImages.swift; sourceTree = "<group>"; };
 		60E6446F17BE219E004486B3 /* HACKS.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = HACKS.md; path = ../HACKS.md; sourceTree = "<group>"; };
 		60E6447417BE424E004486B3 /* ARSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSwitchView.h; sourceTree = "<group>"; };
 		60E6447517BE424E004486B3 /* ARSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSwitchView.m; sourceTree = "<group>"; };
@@ -3242,6 +3254,7 @@
 		6019A9041C7E648700E292FA /* Live Auctions */ = {
 			isa = PBXGroup;
 			children = (
+				60E60A731CA1599C0081446A /* Controllers */,
 				60ED31231C8F76550071DD89 /* View Models */,
 				601E31AD1C80E32B00D09F73 /* Models */,
 				601E31A91C80A53400D09F73 /* Resources */,
@@ -3259,6 +3272,7 @@
 			isa = PBXGroup;
 			children = (
 				609E394D1C9FEC840035C6FC /* LiveAuctionLotImagesPreviewView.swift */,
+				60D3950D1CA068060015726E /* LiveButtons.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -3274,6 +3288,7 @@
 			isa = PBXGroup;
 			children = (
 				6019A90C1C7F9EF600E292FA /* LiveAuctionViewControllerTests.swift */,
+				60E60A781CA17CAE0081446A /* LiveBiddingViewControllerTests.swift */,
 				60ED311E1C8F73450071DD89 /* LiveAuctionLotViewControllerTests.swift */,
 				60ED31201C8F74670071DD89 /* FakeSalesPerson.swift */,
 				608CFC6C1C90C4B500B9056C /* LiveAuctionBidHistoryViewControllerTests.swift */,
@@ -3286,6 +3301,7 @@
 			children = (
 				601E31AA1C80A55F00D09F73 /* live_auctions.json */,
 				6019A9071C7E76EF00E292FA /* LiveAuctionsAssets.xcassets */,
+				609E39501CA062950035C6FC /* LiveAuctionsBidding.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -3340,6 +3356,7 @@
 		60327DCA1987AD140075B399 /* Tooling */ = {
 			isa = PBXGroup;
 			children = (
+				60E60A7B1CA17DE00081446A /* Generated */,
 				60026AEF1BDE3ED60040257C /* Webview Caching */,
 				60327DCB1987AD240075B399 /* ARDispatchManager.h */,
 				60327DCC1987AD240075B399 /* ARDispatchManager.m */,
@@ -4269,6 +4286,23 @@
 			path = SwitchViews;
 			sourceTree = "<group>";
 		};
+		60E60A731CA1599C0081446A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60E60A741CA161A20081446A /* LiveBiddingViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		60E60A7B1CA17DE00081446A /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				60E60A7C1CA17DED0081446A /* StoryboardConstants.swift */,
+				60E60A7D1CA17DED0081446A /* StoryboardImages.swift */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
 		60E6447017BE41A0004486B3 /* Artist */ = {
 			isa = PBXGroup;
 			children = (
@@ -4799,6 +4833,7 @@
 				608B707E17D4A1C80088A56C /* MenuButtonBG@2x.png in Resources */,
 				3C4AE96919094969009C0E8B /* SearchIcon_MediumGrey@2x.png in Resources */,
 				5168A7701B46D6D000FFBCBF /* NotificationsButton@2x.png in Resources */,
+				609E39511CA062950035C6FC /* LiveAuctionsBidding.storyboard in Resources */,
 				3C4AE98419094DAA009C0E8B /* MapAnnotation_Lounge@2x.png in Resources */,
 				6044CFC4179D64F500CE4132 /* Theme.json in Resources */,
 				608B708B17D4A1C80088A56C /* SidebarButtonBG@2x.png in Resources */,
@@ -5093,6 +5128,7 @@
 				5EA7BC251C5FFA86009C52C9 /* InterstellarExtensions.swift in Sources */,
 				6044CFC8179DD3C200CE4132 /* ARTheme+HeightAdditions.m in Sources */,
 				60745DEA165802D9006CE156 /* ARUserManager.m in Sources */,
+				60E60A7E1CA17DED0081446A /* StoryboardConstants.swift in Sources */,
 				60CF980817BF79CA005ED59B /* ARArtistBiographyViewController.m in Sources */,
 				B375E5F71812207D005FC680 /* ArtsyAPI+Sales.m in Sources */,
 				6012313418B153C500B7667F /* ARFairArtistViewController.m in Sources */,
@@ -5175,6 +5211,7 @@
 				E676B2EB18D0CC330057B4E1 /* ARURLItemProvider.m in Sources */,
 				5EF9E1141C56CEDB00CD80DB /* AuctionRefineSettings.swift in Sources */,
 				60A49F601676559300B9B95D /* ARNetworkConstants.m in Sources */,
+				60E60A751CA161A20081446A /* LiveBiddingViewController.swift in Sources */,
 				E61446B0195A1CDC00BFB7C3 /* ARFavoritesNetworkModel.m in Sources */,
 				60431FB818042A1E000118D7 /* ARAppNotificationsDelegate.m in Sources */,
 				D3A9C23D1AF15FF00018A12E /* ARFairNetworkModel.m in Sources */,
@@ -5218,6 +5255,7 @@
 				E619969C19B9099400DB273C /* UIScrollView+HitTest.m in Sources */,
 				B3DDE9C418313CFF0012819F /* ARArtworkPriceRowView.m in Sources */,
 				60E6447617BE424E004486B3 /* ARSwitchView.m in Sources */,
+				60E60A7F1CA17DED0081446A /* StoryboardImages.swift in Sources */,
 				3CF144A418E3727F00B1A764 /* UIViewController+ScreenSize.m in Sources */,
 				603B55A117D64A1B00566935 /* ARArtworkPriceView.m in Sources */,
 				5ED9EC021C458E9500C979A6 /* SwiftExtensions.swift in Sources */,
@@ -5428,6 +5466,7 @@
 				342F9D9D248E4024524174E8 /* ARFairMapViewController.m in Sources */,
 				342F92E8397ACCA0D2EFF1CB /* MapPoint.m in Sources */,
 				60C26DEA1BBC6D7600229CE8 /* AREmbeddedModelsPreviewDelegate.m in Sources */,
+				60D3950E1CA068060015726E /* LiveButtons.swift in Sources */,
 				60FC2CBF1C8F704D00ACD78F /* SaleStatusType.swift in Sources */,
 				342F90FACF8AABA704AF5FC1 /* PartnerShowFairLocation.m in Sources */,
 				833D53C71C75DFA900D63ADB /* ARWorksForYouNetworkModel.m in Sources */,
@@ -5565,6 +5604,7 @@
 				3CAA413218D8CC32000EE867 /* ARFairFavoritesNetworkModelTests.m in Sources */,
 				51F6960C1C6E55EA002B2E35 /* SaleViewModelTests.swift in Sources */,
 				60327DEA198933610075B399 /* ARTestTopMenuNavigationDataSource.m in Sources */,
+				60E60A7A1CA17CB30081446A /* LiveBiddingViewControllerTests.swift in Sources */,
 				0CE3C4361B8BB3630092A24F /* EXPMatcher+UINavigationController.m in Sources */,
 				3CA1E82518846B3A003C622D /* SaleTests.m in Sources */,
 				D37CBC4B1AF2C62E00A69019 /* ARFairNetworkModelTests.m in Sources */,

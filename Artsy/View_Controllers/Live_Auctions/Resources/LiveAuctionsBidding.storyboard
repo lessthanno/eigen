@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AGaramondPro-Bold.otf">
+            <string>AGaramondPro-Bold</string>
+        </mutableArray>
+        <mutableArray key="AGaramondPro-Regular.otf">
+            <string>AGaramondPro-Regular</string>
+            <string>AGaramondPro-Regular</string>
+            <string>AGaramondPro-Regular</string>
+            <string>AGaramondPro-Regular</string>
+        </mutableArray>
+        <mutableArray key="ITCAvantGardeDemi_Track03.ttf">
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+            <string>AvantGardeGothicITCW01Dm</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Place Bid-->
+        <scene sceneID="jSm-Vh-BK2">
+            <objects>
+                <viewController storyboardIdentifier="bid" title="Place Bid" id="ZuJ-YJ-y5z" customClass="LiveBiddingViewController" customModule="Artsy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="15b-ts-s5q"/>
+                        <viewControllerLayoutGuide type="bottom" id="HNg-MA-4dV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iOR-p9-Zmt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOT 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eN-au-qcA">
+                                <rect key="frame" x="98" y="24" width="482" height="21"/>
+                                <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX9-Sd-N94">
+                                <rect key="frame" x="96" y="51" width="484" height="17"/>
+                                <string key="text">Sol LeWitt
+</string>
+                                <fontDescription key="fontDescription" name="AGaramondPro-Bold" family="Adobe Garamond Pro" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seven Equal Arcs from the Minute away from something" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-vx-tgp">
+                                <rect key="frame" x="96" y="72" width="484" height="17"/>
+                                <fontDescription key="fontDescription" name="AGaramondPro-Regular" family="Adobe Garamond Pro" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHE-ek-KAJ">
+                                <rect key="frame" x="24" y="23" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="iqx-D4-Bls"/>
+                                    <constraint firstAttribute="height" constant="64" id="zHw-4X-jAY"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7O-ND-4sQ">
+                                <rect key="frame" x="0.0" y="111" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="n5Q-n7-MyY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcO-hU-Wf9">
+                                <rect key="frame" x="0.0" y="161" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="3iT-az-buD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter $9,500 or more " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn3-kx-qd0">
+                                <rect key="frame" x="0.0" y="126" width="600" height="20"/>
+                                <fontDescription key="fontDescription" name="AGaramondPro-Regular" family="Adobe Garamond Pro" pointSize="20"/>
+                                <color key="textColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tF3-mY-9Ge" customClass="BiddingNumberPadView" customModule="Artsy" customModuleProvider="target">
+                                <rect key="frame" x="153" y="182" width="295" height="282"/>
+                                <subviews>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74W-WH-UkC" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="72" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="kY8-uP-8GG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94o-6o-xTp" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="144" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="eqT-lH-OJS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-xB-hf1" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="190" y="0.0" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="Vtw-h2-yuP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVx-ex-6uM" customClass="KeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="216" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="DELETE">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="leftTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="u3k-2U-Ci1"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oc2-aw-WAm">
+                                        <rect key="frame" x="20" y="215" width="255" height="1"/>
+                                        <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qk8-HV-hCe" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="190" y="72" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="q0m-ST-JEu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-9k-YZ6" customClass="KeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="190" y="216" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="CLEAR">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rightTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="0WB-GN-ZcM"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WpT-uP-BN4">
+                                        <rect key="frame" x="20" y="143" width="255" height="1"/>
+                                        <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePD-Zv-KDy" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="216" width="85" height="72"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="ubf-yi-V0E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkD-Zy-g9P" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="72" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="htB-0d-cO7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzm-F9-81M" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="190" y="144" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="Jkk-ai-pZh"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vct-b0-BrK">
+                                        <rect key="frame" x="20" y="71" width="255" height="1"/>
+                                        <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQL-dp-qoq" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="0.0" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="gvz-K3-Yyq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-Hq-2Iy" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="olD-cm-Yz2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-y0-tW7" customClass="LargeKeypadButton" customModule="Artsy" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="144" width="85" height="71"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="20"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="numberTapped:" destination="tF3-mY-9Ge" eventType="touchUpInside" id="p9M-t3-ak9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="295" id="JQF-ug-bqw"/>
+                                    <constraint firstAttribute="height" constant="282" id="OMm-Yg-Yym"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-CQ-NGu">
+                                <rect key="frame" x="158" y="530" width="284" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by bidding you accept the" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07P-Yj-V4z">
+                                        <rect key="frame" x="5" y="5" width="153" height="21"/>
+                                        <fontDescription key="fontDescription" name="AGaramondPro-Regular" family="Adobe Garamond Pro" pointSize="13"/>
+                                        <color key="textColor" white="0.53000000000000003" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nR-3V-mjS">
+                                        <rect key="frame" x="28" y="16" width="114" height="32"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="12"/>
+                                        <state key="normal" title="PRIVACY POLICY">
+                                            <color key="titleColor" white="0.52999997139999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="privacyPolicyTapped:" destination="ZuJ-YJ-y5z" eventType="touchUpInside" id="2lJ-ft-n4C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-ZH-QF3">
+                                        <rect key="frame" x="139" y="0.0" width="145" height="32"/>
+                                        <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="12"/>
+                                        <state key="normal" title="CONDITIONS OF SALE">
+                                            <color key="titleColor" white="0.52999997139999999" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="conditionsOfSaleTapped:" destination="ZuJ-YJ-y5z" eventType="touchUpInside" id="qXx-4e-Owu"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="and" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyr-n4-pxd">
+                                        <rect key="frame" x="5" y="21" width="23" height="21"/>
+                                        <fontDescription key="fontDescription" name="AGaramondPro-Regular" family="Adobe Garamond Pro" pointSize="13"/>
+                                        <color key="textColor" white="0.53000000000000003" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="CKA-EL-mG7"/>
+                                    <constraint firstAttribute="height" constant="52" id="TYJ-3X-EPF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZw-Kf-lWU" customClass="ActionButton" customModule="Artsy" customModuleProvider="target">
+                                <rect key="frame" x="173" y="472" width="255" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="d6b-De-09q"/>
+                                    <constraint firstAttribute="width" constant="255" id="ohc-KY-hXG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvantGardeGothicITCW01Dm" family="Avant Garde Gothic ITCW01Dm" pointSize="18"/>
+                                <state key="normal" title="BID">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.53000000000000003" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bidTapped:" destination="ZuJ-YJ-y5z" eventType="touchUpInside" id="xOm-di-tCj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MHE-ek-KAJ" firstAttribute="leading" secondItem="iOR-p9-Zmt" secondAttribute="leadingMargin" constant="4" id="3qk-Xp-IYL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xn3-kx-qd0" secondAttribute="trailing" constant="-20" id="4kP-IG-ExF"/>
+                            <constraint firstItem="8eN-au-qcA" firstAttribute="top" secondItem="15b-ts-s5q" secondAttribute="bottom" constant="24" id="4v8-wt-bMY"/>
+                            <constraint firstItem="xn3-kx-qd0" firstAttribute="top" secondItem="l7O-ND-4sQ" secondAttribute="bottom" constant="14" id="78r-3e-9lf"/>
+                            <constraint firstItem="ZX9-Sd-N94" firstAttribute="leading" secondItem="MHE-ek-KAJ" secondAttribute="trailing" constant="8" id="9lj-eT-Sbe"/>
+                            <constraint firstAttribute="trailing" secondItem="l7O-ND-4sQ" secondAttribute="trailing" id="BHT-7V-cnf"/>
+                            <constraint firstItem="LZw-Kf-lWU" firstAttribute="centerX" secondItem="iOR-p9-Zmt" secondAttribute="centerX" id="C0N-ju-O0s"/>
+                            <constraint firstItem="8eN-au-qcA" firstAttribute="leading" secondItem="MHE-ek-KAJ" secondAttribute="trailing" constant="10" id="FWL-7v-si9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JcO-hU-Wf9" secondAttribute="trailing" constant="-20" id="FZQ-5z-Awc"/>
+                            <constraint firstItem="iwb-vx-tgp" firstAttribute="top" secondItem="ZX9-Sd-N94" secondAttribute="bottom" constant="4" id="HrX-uR-Org"/>
+                            <constraint firstItem="l7O-ND-4sQ" firstAttribute="top" secondItem="MHE-ek-KAJ" secondAttribute="bottom" constant="24" id="Kv3-qq-YNb"/>
+                            <constraint firstItem="LZw-Kf-lWU" firstAttribute="top" secondItem="tF3-mY-9Ge" secondAttribute="bottom" constant="8" id="Lvr-gc-p1i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8eN-au-qcA" secondAttribute="trailing" id="MZg-rT-sxO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iwb-vx-tgp" secondAttribute="trailing" id="Pmn-Dv-smx"/>
+                            <constraint firstItem="JcO-hU-Wf9" firstAttribute="leading" secondItem="iOR-p9-Zmt" secondAttribute="leadingMargin" constant="-20" id="Qhy-L8-9dg"/>
+                            <constraint firstItem="ZX9-Sd-N94" firstAttribute="top" secondItem="8eN-au-qcA" secondAttribute="bottom" constant="6" id="Uhx-R5-hwv"/>
+                            <constraint firstItem="JcO-hU-Wf9" firstAttribute="top" secondItem="xn3-kx-qd0" secondAttribute="bottom" constant="15" id="WEa-og-vgM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZX9-Sd-N94" secondAttribute="trailing" id="bO2-n2-kve"/>
+                            <constraint firstItem="l7O-ND-4sQ" firstAttribute="leading" secondItem="iOR-p9-Zmt" secondAttribute="leading" id="bdA-G2-D85"/>
+                            <constraint firstItem="MHE-ek-KAJ" firstAttribute="top" secondItem="15b-ts-s5q" secondAttribute="bottom" constant="23" id="jRV-Pr-Icf"/>
+                            <constraint firstItem="tF3-mY-9Ge" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JcO-hU-Wf9" secondAttribute="bottom" constant="20" id="jha-ie-bJ3"/>
+                            <constraint firstItem="tF3-mY-9Ge" firstAttribute="centerX" secondItem="iOR-p9-Zmt" secondAttribute="centerX" id="lF8-vP-mEd"/>
+                            <constraint firstItem="iwb-vx-tgp" firstAttribute="leading" secondItem="MHE-ek-KAJ" secondAttribute="trailing" constant="8" id="oX9-Ce-OUm"/>
+                            <constraint firstItem="nhb-CQ-NGu" firstAttribute="centerX" secondItem="iOR-p9-Zmt" secondAttribute="centerX" id="pPh-Ad-0yk"/>
+                            <constraint firstItem="nhb-CQ-NGu" firstAttribute="top" secondItem="LZw-Kf-lWU" secondAttribute="bottom" constant="8" id="sVw-eb-c69"/>
+                            <constraint firstItem="xn3-kx-qd0" firstAttribute="leading" secondItem="iOR-p9-Zmt" secondAttribute="leadingMargin" constant="-20" id="wUF-XO-P4e"/>
+                            <constraint firstItem="tF3-mY-9Ge" firstAttribute="centerY" secondItem="iOR-p9-Zmt" secondAttribute="centerY" priority="750" id="xDH-cQ-n40"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="bidButton" destination="LZw-Kf-lWU" id="Xja-jZ-ZSm"/>
+                        <outlet property="currentBidLabel" destination="xn3-kx-qd0" id="r6w-sP-b9m"/>
+                        <outlet property="lotArtistLabel" destination="ZX9-Sd-N94" id="mf9-DD-yKB"/>
+                        <outlet property="lotNameLabel" destination="iwb-vx-tgp" id="VDz-mj-bwl"/>
+                        <outlet property="lotNumberLabel" destination="8eN-au-qcA" id="SJy-Gm-jxJ"/>
+                        <outlet property="lotPreviewImage" destination="MHE-ek-KAJ" id="3J5-tc-3HV"/>
+                        <outlet property="numberPad" destination="tF3-mY-9Ge" id="q75-vZ-Hq4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyG-XH-Ed2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6BI-EY-aQ6">
+            <objects>
+                <viewController id="qLz-9R-HxE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AUN-eL-Jle"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lvl-aw-5xB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D95-5w-hbV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TD6-hG-cO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="362"/>
+        </scene>
+    </scenes>
+</document>

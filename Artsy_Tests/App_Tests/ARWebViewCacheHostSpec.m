@@ -17,7 +17,7 @@ it(@"it generates the same cache configuration objects on webviews", ^{
     expect(webView.configuration.processPool).to.equal(webView2.configuration.processPool);
 });
 
-it(@"it generates a webviews that is already requesting a blank url", ^{
+pending(@"it generates a webviews that is already requesting a blank url", ^{
     sut = [[ARWebViewCacheHost alloc] init];
 
     WKWebView *webView = [sut dequeueWebView];

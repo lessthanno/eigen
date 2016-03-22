@@ -46,6 +46,7 @@ artsy:
 	git submodule update
 	config/spacecommander/setup-repo.sh
 	git update-index --assume-unchanged Artsy/View_Controllers/App_Navigation/ARTopMenuViewController+DeveloperExtras.m
+	brew install swiftgen
 
 certs:
 	echo "Don't log in with it@artsymail.com, use your account on our Artsy team."
@@ -73,7 +74,9 @@ deploy_if_beta_branch:
 deploy:
 	git push origin "$(LOCAL_BRANCH):beta"
 
-
+storyboards:
+	swiftgen storyboards Artsy --output Artsy/Tooling/Generated/StoryboardConstants.swift
+	swiftgen images Artsy --output Artsy/Tooling/Generated/StoryboardImages.swift
 
 ### Utility functions
 
