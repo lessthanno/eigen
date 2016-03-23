@@ -17,6 +17,7 @@
 #import "UIView+HitTestExpansion.h"
 #import <objc/runtime.h>
 #import "UIDevice-Hardware.h"
+#import "Artsy-Swift.h"
 
 #import <JSBadgeView/JSBadgeView.h>
 #import <NPKeyboardLayoutGuide/NPKeyboardLayoutGuide.h>
@@ -323,6 +324,7 @@ static const CGFloat ARMenuButtonDimension = 46;
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appHasBeenInjected:) name:@"INJECTION_BUNDLE_NOTIFICATION" object:nil];
 
             [self runDeveloperExtras];
+            [self runSwiftDeveloperExtras];
         });
     }
 #endif

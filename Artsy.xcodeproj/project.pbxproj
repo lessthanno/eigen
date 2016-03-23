@@ -594,6 +594,9 @@
 		83665E091C84A7B300FA5D77 /* ARWorksForYouNotificationItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83665E081C84A7B300FA5D77 /* ARWorksForYouNotificationItemViewController.m */; };
 		837CEC811C84D77900A7E0E1 /* ARWorksForYouViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 837CEC801C84D77900A7E0E1 /* ARWorksForYouViewControllerTests.m */; };
 		837CEC841C876B7C00A7E0E1 /* ArtsyAPI+Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 837CEC831C876B7C00A7E0E1 /* ArtsyAPI+Notifications.m */; };
+		83C54C2A1CA308F500338E4A /* RefineArtworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C54C291CA308F500338E4A /* RefineArtworksViewController.swift */; };
+		83C54C2C1CA309BE00338E4A /* RefineArtworksViewController+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C54C2B1CA309BE00338E4A /* RefineArtworksViewController+Private.swift */; };
+		83C54C2E1CA3191000338E4A /* ARTopMenuViewController+SwiftDeveloperExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C54C2D1CA3191000338E4A /* ARTopMenuViewController+SwiftDeveloperExtras.swift */; };
 		83F9D5801AD6FDE0000BCC77 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F9D57F1AD6FDE0000BCC77 /* Location.m */; };
 		B30FEF5A181EEA47009E4EAD /* ARBidButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B30FEF59181EEA47009E4EAD /* ARBidButtonTests.m */; };
 		B316E2F418170DF40086CCDB /* SaleArtwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B316E2F318170DF40086CCDB /* SaleArtwork.m */; };
@@ -1704,6 +1707,9 @@
 		837CEC801C84D77900A7E0E1 /* ARWorksForYouViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARWorksForYouViewControllerTests.m; sourceTree = "<group>"; };
 		837CEC821C876B7C00A7E0E1 /* ArtsyAPI+Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ArtsyAPI+Notifications.h"; sourceTree = "<group>"; };
 		837CEC831C876B7C00A7E0E1 /* ArtsyAPI+Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ArtsyAPI+Notifications.m"; sourceTree = "<group>"; };
+		83C54C291CA308F500338E4A /* RefineArtworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefineArtworksViewController.swift; sourceTree = "<group>"; };
+		83C54C2B1CA309BE00338E4A /* RefineArtworksViewController+Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RefineArtworksViewController+Private.swift"; sourceTree = "<group>"; };
+		83C54C2D1CA3191000338E4A /* ARTopMenuViewController+SwiftDeveloperExtras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARTopMenuViewController+SwiftDeveloperExtras.swift"; sourceTree = "<group>"; };
 		83F9D57E1AD6FDE0000BCC77 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		83F9D57F1AD6FDE0000BCC77 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		8B326C42C9FD28482DC62431 /* Pods_Artsy_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Artsy_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -3353,6 +3359,7 @@
 		6034EB261760A1150070478D /* App Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				83C54C2D1CA3191000338E4A /* ARTopMenuViewController+SwiftDeveloperExtras.swift */,
 				6029E9F31993D726002D42C3 /* ARAppSearchViewController.h */,
 				6029E9F41993D726002D42C3 /* ARAppSearchViewController.m */,
 				60327DDF1987FF490075B399 /* ARTopMenuNavigationDataSource.h */,
@@ -3563,6 +3570,8 @@
 		608B2F5A1657CED10046956C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				83C54C291CA308F500338E4A /* RefineArtworksViewController.swift */,
+				83C54C2B1CA309BE00338E4A /* RefineArtworksViewController+Private.swift */,
 				3C2E034A18DA7F640001B7E5 /* Image */,
 				60D8E63718D256A30040BEFD /* Demo */,
 				342F91DD9B57A51A8352877C /* Util */,
@@ -5060,6 +5069,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C54C2C1CA309BE00338E4A /* RefineArtworksViewController+Private.swift in Sources */,
 				CBE939F817FA336C00AD7DDD /* ARArtworkBlurbView.m in Sources */,
 				5E47F35D1C444E3300EC0751 /* UIViewController+ORStackView.swift in Sources */,
 				6088B75917D20A0A00E4BB67 /* ARSlideshowView.m in Sources */,
@@ -5143,6 +5153,7 @@
 				5EFE2BE41910FC81003B5EEA /* ARAppDelegate+Analytics.m in Sources */,
 				3C8A916718A299BF0038A5B2 /* ARFairSectionViewController.m in Sources */,
 				60838EAF17728C5D00869F6E /* ARHeartButton.m in Sources */,
+				83C54C2E1CA3191000338E4A /* ARTopMenuViewController+SwiftDeveloperExtras.swift in Sources */,
 				499A5894166683AC004B0E2F /* Artist.m in Sources */,
 				5EE5DE14190167A400040B84 /* ARProfileViewController.m in Sources */,
 				E667F12218EC825D00503F50 /* ARHTTPRequestOperationLogger.m in Sources */,
@@ -5294,6 +5305,7 @@
 				60FC2CBB1C8DF29900ACD78F /* LiveEvent.m in Sources */,
 				E6B958EF188DB24200D75C86 /* ARViewTagConstants.m in Sources */,
 				60D90A0B17C218930073D5B9 /* ARInternalMobileWebViewController.m in Sources */,
+				83C54C2A1CA308F500338E4A /* RefineArtworksViewController.swift in Sources */,
 				609A82F017A10C5C00AFDF13 /* ARNavigationTransitionController.m in Sources */,
 				606E3F921BF3BEDE00D3055E /* ARSimpleShowFeedViewController+Konami.m in Sources */,
 				6019A9061C7E64B700E292FA /* LiveAuctionViewController.swift in Sources */,
