@@ -169,7 +169,7 @@ extension AuctionViewController {
 
     func defaultRefineSettings() -> AuctionRefineSettings {
         guard let defaultSettings = _defaultRefineSettings else {
-            let defaultSettings = AuctionRefineSettings(ordering: AuctionOrderingSwitchValue.LotNumber, range: self.saleViewModel.lowEstimateRange)
+            let defaultSettings = AuctionRefineSettings(ordering: AuctionOrderingSwitchValue.LotNumber, priceRange:self.saleViewModel.lowEstimateRange, saleViewModel:saleViewModel)
             _defaultRefineSettings = defaultSettings
             return defaultSettings
         }

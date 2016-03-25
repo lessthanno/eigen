@@ -1,13 +1,13 @@
 import UIKit
 import MARKRangeSlider
 
-protocol RefineArtworksViewControllerDelegate: class {
+protocol RefinableArtworkCollectionDelegate: class {
     func userDidCancel(controller: RefineArtworksViewController)
     func userDidApply(settings: AuctionRefineSettings, controller: RefineArtworksViewController);
 }
 
 class RefineArtworksViewController: UIViewController {
-    weak var delegate: RefineArtworksViewControllerDelegate?
+    weak var delegate: RefinableArtworkCollectionDelegate?
     var artworkCollectionViewModel: SaleViewModel!
     var minLabel: UILabel?
     var maxLabel: UILabel?

@@ -29,8 +29,8 @@ extension AuctionRefineViewController {
     }
 
     func updatePriceLabels() {
-        minLabel?.text = currentSettings.range.min.metricSuffixify()
-        maxLabel?.text = currentSettings.range.max.metricSuffixify()
+        minLabel?.text = currentSettings.priceRange?.min.metricSuffixify()
+        maxLabel?.text = currentSettings.priceRange?.max.metricSuffixify()
     }
 
     func updateButtonEnabledStates() {
@@ -58,7 +58,9 @@ extension UserInteraction {
         currentSettings = defaultSettings
         sortTableView?.reloadData()
 
-        slider?.setLeftValue(CGFloat(defaultSettings.range.min), rightValue: CGFloat(defaultSettings.range.max))
+        if let range = self.defaultSettings.priceRange {
+            slider?.setLeftValue(CGFloat(range.min), rightValue: CGFloat(range.max))
+        }
         updatePriceLabels()
         updateButtonEnabledStates()
     }
@@ -102,7 +104,7 @@ private extension UISetup {
         stackView.addSubview(ARSeparatorView(), withTopMargin: "0", sideMargin: "0")
 
         // Price section
-        if initialSettings.hasEstimates {
+        if let initialRange = initialSettings.priceRange {
             stackView.addSubview(subtitleLabel("Price"), withTopMargin: "20", sideMargin: "40")
 
             let priceExplainLabel = ARSerifLabel().then {
@@ -117,6 +119,7 @@ private extension UISetup {
             }
             stackView.addSubview(labelContainer, withTopMargin: "10", sideMargin: "40")
 
+            
             let slider = MARKRangeSlider().then {
                 $0.rangeImage = UIImage(named: "Range")
                 $0.trackImage = UIImage(named: "Track")
@@ -124,13 +127,13 @@ private extension UISetup {
                 $0.leftThumbImage = $0.rightThumbImage
                 $0.addTarget(self, action: "sliderValueDidChange:", forControlEvents: .ValueChanged)
 
-                let maxRange = self.defaultSettings.range
-                let initialRange = initialSettings.range
-                $0.setMinValue(CGFloat(maxRange.min), maxValue: CGFloat(maxRange.max))
-                $0.setLeftValue(CGFloat(initialRange.min), rightValue: CGFloat(initialRange.max))
-
-                // Make sure they don't touch by keeping them minimum 10% apart
-                $0.minimumDistance = CGFloat(maxRange.max - maxRange.min) / 10.0
+                if let maxRange = defaultSettings.priceRange {
+                    $0.setMinValue(CGFloat(maxRange.min), maxValue: CGFloat(maxRange.max))
+                    $0.setLeftValue(CGFloat(initialRange.min), rightValue: CGFloat(initialRange.max))
+                    
+                    // Make sure they don't touch by keeping them minimum 10% apart
+                    $0.minimumDistance = CGFloat(maxRange.max - maxRange.min) / 10.0
+                }
             }
             stackView.addSubview(slider, withTopMargin: "10", sideMargin: "40")
 
