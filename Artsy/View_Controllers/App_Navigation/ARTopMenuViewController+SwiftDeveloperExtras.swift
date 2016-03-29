@@ -5,7 +5,8 @@ import UIKit
 extension ARTopMenuViewController: RefinableArtworkCollectionDelegate {
 
     func runSwiftDeveloperExtras() {        
-        let settings = AuctionRefineSettings(ordering: .ArtistAlphabetical, priceRange:(min: 500_00, max:100_000_00), saleViewModel: nil)
+        let settings = AuctionRefineSettings(ordering: .ArtistAlphabetical, priceRange: (min: 500_00, max: 100_000_00), saleViewModel: SaleViewModel(sale: Sale(), saleArtworks:[SaleArtwork()]))
+        
         let vc = RefineArtworksViewController.init(defaultSettings: settings, initialSettings: settings)
         vc.modalPresentationStyle = .FormSheet
         vc.delegate = self

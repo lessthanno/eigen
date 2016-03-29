@@ -91,13 +91,18 @@ extension SaleViewModel {
 
         if refineSettings.priceRange?.min != defaultRefineSettings.priceRange?.min ||
            refineSettings.priceRange?.max != defaultRefineSettings.priceRange?.max {
-            let min = refineSettings.priceRange?.min.roundCentsToNearestThousandAndFormat()
-            let max = refineSettings.priceRange?.max.roundCentsToNearestThousandAndFormat()
-            subtitle += "・\(min)–\(max)"
+            subtitle += formattedStringForPriceRange(refineSettings.priceRange!)
         }
 
         return subtitle
     }
+    
+    func formattedStringForPriceRange(range: PriceRange) -> String {
+        let min = range.min.roundCentsToNearestThousandAndFormat()
+        let max = range.max.roundCentsToNearestThousandAndFormat()
+        return "・\(min)–\(max)"
+    }
+    
 }
 
 /// Allows us to support spotlight indexing

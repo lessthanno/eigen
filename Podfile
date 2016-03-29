@@ -115,7 +115,7 @@ target 'Artsy' do
 end
 
 target 'Artsy Tests' do
-  pod 'FBSnapshotTestCase'
+  pod 'FBSnapshotTestCase', git: 'https://github.com/untitledstartup/ios-snapshot-test-case.git'
   pod 'Expecta+Snapshots'
   pod 'OHHTTPStubs'
   pod 'XCTest+OHHTTPStubSuiteCleanUp'
@@ -125,8 +125,8 @@ target 'Artsy Tests' do
   pod 'Forgeries/Mocks', :git => "https://github.com/ashfurrow/Forgeries.git", :branch => "application"
 
   # Swift pods 🎉
-  pod 'Quick'
-  pod 'Nimble'
+  pod 'Quick', git: 'https://github.com/Quick/Quick.git'
+  pod 'Nimble', git: 'https://github.com/Quick/Nimble.git'
   pod 'Nimble-Snapshots', '~> 3.0.0'
 end
 

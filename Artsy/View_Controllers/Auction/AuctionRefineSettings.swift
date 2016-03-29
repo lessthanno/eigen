@@ -2,7 +2,7 @@ struct AuctionRefineSettings {
 
     let ordering: AuctionOrderingSwitchValue
     var priceRange: PriceRange?
-    var saleViewModel: SaleViewModel?
+    var saleViewModel: SaleViewModel
 }
 
 extension AuctionRefineSettings {
@@ -11,7 +11,11 @@ extension AuctionRefineSettings {
     }
 
     func settingsWithRange(range: PriceRange) -> AuctionRefineSettings {
-        return AuctionRefineSettings(ordering: self.ordering, priceRange:priceRange, saleViewModel:saleViewModel)
+        return AuctionRefineSettings(ordering: self.ordering, priceRange:range, saleViewModel:saleViewModel)
+    }
+    
+    func saleID() -> NSString {
+        return saleViewModel.saleID
     }
 }
 
@@ -25,12 +29,36 @@ extension AuctionRefineSettings: RefinableType {
         return 1
     }
     
+    func settingsWithSelectedIndexPath(indexPath: NSIndexPath) -> AuctionRefineSettings {
+        return settingsWithOrdering(AuctionOrderingSwitchValue.fromIntWithViewModel(indexPath.row, saleViewModel: saleViewModel))
+    }
+    
+    func indexPathOfSelectedOrdering() -> NSIndexPath? {
+        if let i = AuctionOrderingSwitchValue.allSwitchValuesWithViewModel(saleViewModel).indexOf(ordering) {
+            return NSIndexPath.init(forItem: i, inSection: 0)
+        } else {
+            return nil
+        }
+    }
+    
+    func multipleSelectionAllowedInSection(section: Int) -> Bool {
+        return true
+    }
+
+    func switchValueAtIndexPath(indexPath: NSIndexPath) -> AuctionOrderingSwitchValue {
+        return AuctionOrderingSwitchValue.allSwitchValuesWithViewModel(saleViewModel)[indexPath.row]
+    }
+    
+    func shouldCheckRowAtIndexPath(indexPath: NSIndexPath) -> Bool {
+        return ordering == switchValueAtIndexPath(indexPath)
+    }
+    
     func numberOfRowsPerSection(section: Int) -> Int {
-        return 3
+        return AuctionOrderingSwitchValue.allSwitchValuesWithViewModel(saleViewModel).count
     }
     
     func titleForRow(row: Int, inSection section: Int) -> String {
-        return "title"
+        return AuctionOrderingSwitchValue.allSwitchValuesWithViewModel(saleViewModel)[row].rawValue
     }
     
     func refineSettingsWithPriceRange(range: PriceRange) -> AuctionRefineSettings {

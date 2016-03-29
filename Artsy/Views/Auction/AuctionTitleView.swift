@@ -88,7 +88,8 @@ private extension AuctionTitleView {
     }
 
     func titleView() -> UIView {
-        let container = UIView()
+        // container needs a reasonable-ish size when we add the titleLabel, so its preferredMaxLayoutWidth gets set to something non-zero.
+        let container = UIView(frame: CGRect(origin: CGPoint.zero, size: UIScreen.mainScreen().bounds.size))
         let regularSize = traitCollection.horizontalSizeClass == .Regular
 
         let titleLabel = ARSerifLabel().then {
@@ -98,15 +99,20 @@ private extension AuctionTitleView {
         container.addSubview(titleLabel)
 
         if fullWidth {
-            titleLabel.alignLeadingEdgeWithView(container, predicate: "0")
             titleLabel.alignTop("0", bottom: "0", toView: container)
+            titleLabel.alignLeadingEdgeWithView(container, predicate: "0")
+
+            // If we're showing the info button, we'll anchor trailing space to that later, but if not, we need to anchor to the container.
+            if showAdditionalInformation == false {
+                titleLabel.alignTrailingEdgeWithView(container, predicate: "0")
+            }
         } else {
             titleLabel.alignCenterXWithView(container, predicate: "0")
         }
 
         if showAdditionalInformation {
             let infoButton = UIButton.circularButton(.Info)
-            infoButton.addTarget(self, action: "userDidPressInfo", forControlEvents: .TouchUpInside)
+            infoButton.addTarget(self, action: #selector(AuctionTitleView.userDidPressInfo), forControlEvents: .TouchUpInside)
             container.addSubview(infoButton)
 
             // Vertically align both label and button
@@ -166,7 +172,7 @@ private extension AuctionTitleView {
 
         let registerButton = ARBlackFlatButton().then {
             $0.setTitle("Register to Bid", forState: .Normal)
-            $0.addTarget(self, action: "userDidPressRegister", forControlEvents: .TouchUpInside)
+            $0.addTarget(self, action: #selector(AuctionTitleView.userDidPressRegister), forControlEvents: .TouchUpInside)
         }
         container.addSubview(registerButton)
 

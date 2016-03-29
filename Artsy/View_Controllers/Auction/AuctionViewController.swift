@@ -68,7 +68,7 @@ class AuctionViewController: UIViewController {
             // TODO: Error-handling somehow
         }
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "registrationUpdated:", name: ARAuctionArtworkRegistrationUpdatedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AuctionViewController.registrationUpdated(_:)), name: ARAuctionArtworkRegistrationUpdatedNotification, object: nil)
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -156,7 +156,7 @@ extension AuctionViewController {
             $0.toggleAttatched(false, animated:false)
             $0.button.setTitle("Refine", forState: .Normal)
             $0.titleLabel.text = saleViewModel.displayName
-            $0.button.addTarget(self, action: "showRefineTapped", forControlEvents: .TouchUpInside)
+            $0.button.addTarget(self, action: #selector(AuctionViewController.showRefineTapped), forControlEvents: .TouchUpInside)
         }
 
         saleArtworksViewController.stickyHeaderView = stickyHeader
@@ -177,12 +177,17 @@ extension AuctionViewController {
     }
 
     func showRefineTapped() {
-        let refineViewController = AuctionRefineViewController(defaultSettings: defaultRefineSettings(), initialSettings: refineSettings).then {
-            $0.delegate = self
-            $0.modalPresentationStyle = .FormSheet
-            $0.changeStatusBar = self.traitCollection.horizontalSizeClass == .Compact
-            $0.saleViewModel = self.saleViewModel
+       let refineViewController = RefineViewController(defaultSettings: defaultRefineSettings(), initialSettings: refineSettings, userDidCancelClosure: { (refineVC) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+       }) { (settings: AuctionRefineSettings) in
+            self.refineSettings = settings
+            
+            self.displayCurrentItems()
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
+        
+        refineViewController.modalPresentationStyle = .FormSheet
+        refineViewController.changeStatusBar = self.traitCollection.horizontalSizeClass == .Compact
         presentViewController(refineViewController, animated: true, completion: nil)
     }
 
@@ -245,20 +250,6 @@ extension TitleCallbacks: AuctionTitleViewDelegate {
         } else {
             showRegister()
         }
-    }
-}
-
-private typealias RefineSettings = AuctionViewController
-extension RefineSettings: AuctionRefineViewControllerDelegate {
-    func userDidCancel(controller: AuctionRefineViewController) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-
-    func userDidApply(settings: AuctionRefineSettings, controller: AuctionRefineViewController) {
-        refineSettings = settings
-
-        displayCurrentItems()
-        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

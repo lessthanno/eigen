@@ -2,6 +2,7 @@ import UIKit
 import MessageUI
 import ORStackView
 import Interstellar
+import ARAnalytics
 
 typealias MarkdownString = String
 
@@ -46,6 +47,16 @@ class AuctionInformationViewController : UIViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
+  
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if (navigationController?.topViewController == self) {
+          ARAnalytics.pageView("Sale Information", withProperties: [
+              "auction_slug": saleViewModel.saleID,
+              "slug": NSString(format: "/auction/%@/info", saleViewModel.saleID)
+          ])
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +83,7 @@ class AuctionInformationViewController : UIViewController {
         stackView.addSubview(auctionTitleView, withTopMargin: "20", sideMargin: "40")
         
         let auctionDescriptionView = ARTextView()
+        auctionDescriptionView.useSemiBold = true
         auctionDescriptionView.setMarkdownString(saleViewModel.saleDescription)
         stackView.addSubview(auctionDescriptionView, withTopMargin: "10", sideMargin: "40")
         
@@ -112,6 +124,12 @@ class AuctionInformationViewController : UIViewController {
     }
 
     func showContact(animated: Bool) {
+        ARAnalytics.event(ARAnalyticsAuctionContactTapped, withProperties: [
+            "auction_slug": saleViewModel.saleID,
+            "auction_state": saleViewModel.saleAvailabilityString,
+            "context_type": navigationController?.topViewController == self ? "sale" : "sale information"
+        ])
+
         if (MFMailComposeViewController.canSendMail()) {
             let controller = MFMailComposeViewController()
             controller.mailComposeDelegate = self
@@ -174,10 +192,9 @@ extension AuctionInformationViewController {
             self.stackView.alignLeading("0", trailing: "0", toView: self.view)
             self.stackView.constrainBottomSpaceToView(self.flk_bottomLayoutGuide(), predicate: "-40")
             
-            for (var i = 0; i < self.entries.count; i++) {
-                let entry = self.entries[i]
+            for (index, entry) in self.entries.enumerate() {
                 let entryView = EntryView(entry: entry, textDelegate: self) { [unowned self] in self.expandView($0) }
-                entryView.tag = i
+                entryView.tag = index
                 self.stackView.addSubview(entryView, withTopMargin: "0", sideMargin: "0")
             }
             
@@ -227,6 +244,7 @@ extension AuctionInformationViewController {
                 
                 let contentView = ARTextView()
                 contentView.scrollEnabled = true
+                contentView.useSemiBold = true
 
                 entry.downloadContent()
                 entry.markdownSignal.next { string in
@@ -241,7 +259,7 @@ extension AuctionInformationViewController {
                 
                 super.init(frame: CGRectZero)
                 
-                titleButton.addTarget(self, action: "didTap", forControlEvents: .TouchUpInside)
+                titleButton.addTarget(self, action: #selector(EntryView.didTap), forControlEvents: .TouchUpInside)
                 
                 addSubview(topBorder)
                 addSubview(titleButton)
