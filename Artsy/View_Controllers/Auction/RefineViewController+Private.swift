@@ -72,8 +72,10 @@ private extension RefineViewController {
         stackView.addSubview(subtitleLabel("Sort"), withTopMargin: "20", sideMargin: "40")
 
         stackView.addSubview(ARSeparatorView(), withTopMargin: "10", sideMargin: "0")
+        
 
-        let tableViewHandler = RefineViewControllerTableViewHandler.init()
+//        let tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: 1, numberOfRowsInSection: {section in return 1 }, titleForRowAtIndexPath: { indexPath in return "title" }, shouldCheckRowAtIndexPath: {indexPath in return false })
+        let tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: 1, numberOfRowsInSection: {section in return 2}, titleForRowAtIndexPath: {indexPath in return "title"}, shouldCheckRowAtIndexPath: {indexPath in return false}, selectedRowsInSection: {section in return [NSIndexPath.init(forRow: 1, inSection: 0)]}, allowsMultipleSelectionClosure: {section in return false})
         
         let tableView = UITableView().then {
             $0.registerClass(AuctionRefineTableViewCell.self, forCellReuseIdentifier: CellIdentifier)
@@ -89,6 +91,8 @@ private extension RefineViewController {
         }
         stackView.addSubview(tableView, withTopMargin: "0", sideMargin: "40")
 
+        tableView.reloadData()
+        
         stackView.addSubview(ARSeparatorView(), withTopMargin: "0", sideMargin: "0")
 
         // Price section
@@ -208,21 +212,39 @@ extension RefineViewController {
 }
 
 class RefineViewControllerTableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate  {
+    let numberOfSections: Int
+    let numberOfRowsInSection: Int -> Int
+    let titleForRowAtIndexPath: NSIndexPath -> String
+    let shouldCheckRowAtIndexPath: NSIndexPath -> Bool
+    let selectedRowsInSection: Int -> [NSIndexPath]
+    let allowsMultipleSelectionInSection: Int -> Bool
     
     // closures from currentSettings
-//    init() {
-//        
-//    }
+    init(numberOfSections: Int, numberOfRowsInSection: Int -> Int, titleForRowAtIndexPath: NSIndexPath -> String, shouldCheckRowAtIndexPath: NSIndexPath -> Bool, selectedRowsInSection: Int -> [NSIndexPath], allowsMultipleSelectionClosure: Int -> Bool) {
+        self.numberOfSections = numberOfSections
+        self.numberOfRowsInSection = numberOfRowsInSection
+        self.titleForRowAtIndexPath = titleForRowAtIndexPath
+        self.shouldCheckRowAtIndexPath = shouldCheckRowAtIndexPath
+        self.selectedRowsInSection = selectedRowsInSection
+        self.allowsMultipleSelectionInSection = allowsMultipleSelectionClosure
+        
+        super.init()
+    }
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return currentSettings.numberOfRowsPerSection(section)
-        return 2
+        return numberOfRowsInSection(section)
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath)
 
-//        cell.textLabel?.text = currentSettings.titleForRow(indexPath.row, inSection: indexPath.section)
+        cell.textLabel?.text = titleForRowAtIndexPath(indexPath)
         
         return cell
     }
@@ -231,13 +253,19 @@ class RefineViewControllerTableViewHandler: NSObject, UITableViewDataSource, UIT
         cell.layoutMargins = UIEdgeInsetsZero
         cell.preservesSuperviewLayoutMargins = false
         cell.textLabel?.font = UIFont.serifFontWithSize(16)
-//        cell.checked = currentSettings.shouldCheckRowAtIndexPath(indexPath)
+        cell.checked = shouldCheckRowAtIndexPath(indexPath)
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-        // Un-check formerly selected cell.
+        
+        if let oldCheckedCellIndex = selectedRowsInSection(indexPath.section).first where allowsMultipleSelectionInSection(indexPath.section) == false {
+            // Un-check formerly selected cell.
+            let cell = tableView.cellForRowAtIndexPath(oldCheckedCellIndex)
+            cell?.checked = false
+            
+            
+        }
 //        if let oldCheckedCellIndex = currentSettings.indexPathOfSelectedOrdering() {
 //            let cell = tableView.cellForRowAtIndexPath(oldCheckedCellIndex)
 //            cell?.checked = false
