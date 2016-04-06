@@ -18,8 +18,8 @@ class RefineViewController<R: RefinableType>: UIViewController {
     var resetButton: UIButton?
     var sortTableView: UITableView?
     var tableViewHandler: RefineViewControllerTableViewHandler?
-    var userDidCancelClosure: RefineViewController -> Void
-    var userDidApplyClosure: R -> Void
+    var userDidCancelClosure: (RefineViewController -> Void)?
+    var userDidApplyClosure: (R -> Void)?
 
     // defaultSettings also implies min/max price ranges
     var defaultSettings: R
@@ -33,7 +33,7 @@ class RefineViewController<R: RefinableType>: UIViewController {
 
     var changeStatusBar = false
 
-    init(defaultSettings: R, initialSettings: R, userDidCancelClosure: RefineViewController -> Void, userDidApplyClosure: R -> Void) {
+    init(defaultSettings: R, initialSettings: R, userDidCancelClosure: (RefineViewController -> Void)?, userDidApplyClosure: (R -> Void)?) {
         self.defaultSettings = defaultSettings
         self.initialSettings = initialSettings
         self.currentSettings = initialSettings
@@ -49,11 +49,11 @@ class RefineViewController<R: RefinableType>: UIViewController {
     }
     
     func userDidPressApply() {
-        userDidApplyClosure(currentSettings)
+        userDidApplyClosure?(currentSettings)
     }
     
     func userDidCancel() {
-        userDidCancelClosure(self)
+        userDidCancelClosure?(self)
     }
     
     func userDidPressReset() {

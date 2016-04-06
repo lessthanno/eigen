@@ -43,13 +43,6 @@ extension RefineViewController {
     }
 }
 
-/// User Interaction
- extension RefineViewController {
-
-
-
-}
-
 /// UISetup
 private extension RefineViewController {
 
@@ -72,9 +65,14 @@ private extension RefineViewController {
         stackView.addSubview(subtitleLabel("Sort"), withTopMargin: "20", sideMargin: "40")
 
         stackView.addSubview(ARSeparatorView(), withTopMargin: "10", sideMargin: "0")
-        
 
-        tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: 1, numberOfRowsInSection: {section in return 2}, titleForRowAtIndexPath: {indexPath in return "title"}, shouldCheckRowAtIndexPath: {indexPath in return false}, selectedRowsInSection: {section in return [NSIndexPath.init(forRow: 1, inSection: 0)]}, allowsMultipleSelectionClosure: {section in return false})
+        tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: currentSettings.numberOfSections,
+                                                                     numberOfRowsInSection: currentSettings.numberOfRowsInSection,
+                                                                     titleForRowAtIndexPath: currentSettings.titleForRowAtIndexPath,
+                                                                     shouldCheckRowAtIndexPath: currentSettings.shouldCheckRowAtIndexPath,
+                                                                     selectedRowsInSection: currentSettings.selectedRowsInSection,
+                                                                     allowsMultipleSelectionClosure: currentSettings.allowMultipleSelectionInSection,
+                                                                     changeSettingsClosure: { (indexPath) in self.currentSettings = self.currentSettings.refineSettingsWithSelectedIndexPath(indexPath)})
 
         let tableView = UITableView().then {
             $0.registerClass(AuctionRefineTableViewCell.self, forCellReuseIdentifier: CellIdentifier)
@@ -84,8 +82,7 @@ private extension RefineViewController {
             $0.dataSource = tableViewHandler
             $0.delegate = tableViewHandler
             
-            /// note to self - change this to accomodate multiple sections
-            let tableViewHeight = 44 * currentSettings.numberOfRowsPerSection(0) - 1 // -1 to cut off the bottom-most separator that we'll manually add below.
+            let tableViewHeight = 44 * currentSettings.numberOfRowsInSection(0) - 1 // -1 to cut off the bottom-most separator that we'll manually add below.
             $0.constrainHeight("\(tableViewHeight)")
         }
         stackView.addSubview(tableView, withTopMargin: "0", sideMargin: "40")
@@ -221,22 +218,23 @@ class RefineViewControllerTableViewHandler: NSObject, UITableViewDataSource, UIT
     let shouldCheckRowAtIndexPath: NSIndexPath -> Bool
     let selectedRowsInSection: Int -> [NSIndexPath]
     let allowsMultipleSelectionInSection: Int -> Bool
+    let changeSettingsClosure: NSIndexPath -> Void
     
     // closures from currentSettings
-    init(numberOfSections: Int, numberOfRowsInSection: Int -> Int, titleForRowAtIndexPath: NSIndexPath -> String, shouldCheckRowAtIndexPath: NSIndexPath -> Bool, selectedRowsInSection: Int -> [NSIndexPath], allowsMultipleSelectionClosure: Int -> Bool) {
+    init(numberOfSections: Int, numberOfRowsInSection: Int -> Int, titleForRowAtIndexPath: NSIndexPath -> String, shouldCheckRowAtIndexPath: NSIndexPath -> Bool, selectedRowsInSection: Int -> [NSIndexPath], allowsMultipleSelectionClosure: Int -> Bool, changeSettingsClosure: NSIndexPath -> Void) {
         self.numberOfSections = numberOfSections
         self.numberOfRowsInSection = numberOfRowsInSection
         self.titleForRowAtIndexPath = titleForRowAtIndexPath
         self.shouldCheckRowAtIndexPath = shouldCheckRowAtIndexPath
         self.selectedRowsInSection = selectedRowsInSection
         self.allowsMultipleSelectionInSection = allowsMultipleSelectionClosure
-        
+        self.changeSettingsClosure = changeSettingsClosure
+
         super.init()
     }
-    
-    
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return numberOfSections
     }
     
     
@@ -261,25 +259,20 @@ class RefineViewControllerTableViewHandler: NSObject, UITableViewDataSource, UIT
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
+
+        // currently only supports single-selection
         if let oldCheckedCellIndex = selectedRowsInSection(indexPath.section).first where allowsMultipleSelectionInSection(indexPath.section) == false {
             // Un-check formerly selected cell.
-            let cell = tableView.cellForRowAtIndexPath(oldCheckedCellIndex)
-            cell?.checked = false
-            
-            
-        }
-//        if let oldCheckedCellIndex = currentSettings.indexPathOfSelectedOrdering() {
-//            let cell = tableView.cellForRowAtIndexPath(oldCheckedCellIndex)
-//            cell?.checked = false
-        
-            // Change setting.
-//            currentSettings = currentSettings.settingsWithSelectedIndexPath(indexPath)
-//        }
+            let formerlySelected = tableView.cellForRowAtIndexPath(oldCheckedCellIndex)
+            formerlySelected?.checked = false
 
-        // Check newly selected cell.
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell?.checked = true
+            // Change setting.
+            changeSettingsClosure(indexPath)
+
+            // Check newly selected cell.
+            let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
+            selectedCell?.checked = true
+        }
     }
 }
 

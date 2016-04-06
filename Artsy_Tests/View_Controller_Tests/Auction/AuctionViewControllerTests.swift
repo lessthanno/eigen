@@ -136,7 +136,7 @@ class AuctionViewControllerTests: QuickSpec {
                 ARTestContext.useDevice(device) {
                     subject.stubHorizontalSizeClass(horizontalSizeClass)
                     subject.loadViewProgrammatically() // We need to load the view so it has a view model before calling defaultRefineSettings()
-                    subject.refineSettings = subject.defaultRefineSettings().settingsWithRange((min: 1000, max: 1000_000))
+                    subject.refineSettings = subject.defaultRefineSettings().refineSettingsWithPriceRange((min: 1000, max: 1000_000))
                     expect(subject).to( haveValidSnapshot() )
                 }
 
@@ -151,7 +151,7 @@ class AuctionViewControllerTests: QuickSpec {
                 ARTestContext.useDevice(device) {
                     subject.stubHorizontalSizeClass(horizontalSizeClass)
                     subject.loadViewProgrammatically() // We need to load the view so it has a view model before calling defaultRefineSettings()
-                    subject.refineSettings = subject.defaultRefineSettings().settingsWithOrdering(.ArtistAlphabetical).settingsWithRange((min: 1000, max: 1000_000))
+                    subject.refineSettings = subject.defaultRefineSettings().refineSettingsWithSelectedIndexPath(NSIndexPath(forRow: 0, inSection: 0)).refineSettingsWithPriceRange((min: 1000, max: 1000_00))
                     expect(subject).to( haveValidSnapshot() )
                 }
             }
@@ -179,7 +179,7 @@ class AuctionViewControllerTests: QuickSpec {
                     ARTestContext.useDevice(device) {
                         subject.stubHorizontalSizeClass(horizontalSizeClass)
                         subject.loadViewProgrammatically() // We need to load the view so it has a view model before calling defaultRefineSettings()
-                        subject.refineSettings = subject.defaultRefineSettings().settingsWithRange((min: 2_000_00, max: 3_000_00)) // Outside the sale artworks' estimates.
+                        subject.refineSettings = subject.defaultRefineSettings().refineSettingsWithPriceRange((min: 2_000_00, max: 3_000_00)) // Outside the sale artworks' estimates.
                         expect(subject).to( haveValidSnapshot() )
                     }
                 }
