@@ -74,9 +74,8 @@ private extension RefineViewController {
         stackView.addSubview(ARSeparatorView(), withTopMargin: "10", sideMargin: "0")
         
 
-//        let tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: 1, numberOfRowsInSection: {section in return 1 }, titleForRowAtIndexPath: { indexPath in return "title" }, shouldCheckRowAtIndexPath: {indexPath in return false })
-        let tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: 1, numberOfRowsInSection: {section in return 2}, titleForRowAtIndexPath: {indexPath in return "title"}, shouldCheckRowAtIndexPath: {indexPath in return false}, selectedRowsInSection: {section in return [NSIndexPath.init(forRow: 1, inSection: 0)]}, allowsMultipleSelectionClosure: {section in return false})
-        
+        tableViewHandler = RefineViewControllerTableViewHandler.init(numberOfSections: 1, numberOfRowsInSection: {section in return 2}, titleForRowAtIndexPath: {indexPath in return "title"}, shouldCheckRowAtIndexPath: {indexPath in return false}, selectedRowsInSection: {section in return [NSIndexPath.init(forRow: 1, inSection: 0)]}, allowsMultipleSelectionClosure: {section in return false})
+
         let tableView = UITableView().then {
             $0.registerClass(AuctionRefineTableViewCell.self, forCellReuseIdentifier: CellIdentifier)
             $0.scrollEnabled = false
@@ -96,7 +95,7 @@ private extension RefineViewController {
         stackView.addSubview(ARSeparatorView(), withTopMargin: "0", sideMargin: "0")
 
         // Price section
-        if let initialRange = initialSettings.priceRange, maxRange = defaultSettings.priceRange {
+        if let initialRange = initialSettings.priceRange, maxRange = defaultSettings.priceRange where rangeHasEstimates(initialSettings.priceRange) {
             stackView.addSubview(subtitleLabel("Price"), withTopMargin: "20", sideMargin: "40")
 
             let priceExplainLabel = ARSerifLabel().then {
@@ -191,6 +190,10 @@ private extension RefineViewController {
         updateButtonEnabledStates()
 
         return stackView
+    }
+
+    func rangeHasEstimates(range: PriceRange?) -> Bool {
+        return range?.min != 0 && range?.max != 0
     }
 }
 

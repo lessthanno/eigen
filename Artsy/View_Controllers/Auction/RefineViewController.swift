@@ -17,6 +17,7 @@ class RefineViewController<R: RefinableType>: UIViewController {
     var applyButton: UIButton?
     var resetButton: UIButton?
     var sortTableView: UITableView?
+    var tableViewHandler: RefineViewControllerTableViewHandler?
     var userDidCancelClosure: RefineViewController -> Void
     var userDidApplyClosure: R -> Void
 

@@ -323,6 +323,7 @@ static const CGFloat ARMenuButtonDimension = 46;
         dispatch_once(&onceToken, ^{
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appHasBeenInjected:) name:@"INJECTION_BUNDLE_NOTIFICATION" object:nil];
 
+            [self runSwiftDeveloperExtras];
             [self runDeveloperExtras];
         });
     }
